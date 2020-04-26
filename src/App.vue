@@ -7,7 +7,7 @@
       </div>
     </div>
     <hr />
-    <h1 class="text-center">Test Instantly</h1>
+    <h1 class="text-center">Interactive Demo</h1>
     <div class="width_100p">
       <form class="form">
         <div>
@@ -55,6 +55,11 @@
         <VueHexagonProgress :options="options" />
       </div>
     </div>
+    <hr />
+    <h1 class="text-center">Live Progress Demo</h1>
+    <div class="text-center" v-if="liveDemoOptions">
+      <VueHexagonProgress :options="liveDemoOptions" />
+    </div>
   </div>
 </template>
 
@@ -63,18 +68,8 @@ export default {
   name: 'App',
   data() {
     return {
-      options: {
-        width: 200,
-        height: 200,
-        primaryColor: '#45ad9a',
-        secondaryColor: '#aaa',
-        labelColor: '#000',
-        label: '50%',
-        value: 50,
-        className: 'vue-hexagon-custom-class',
-        thickness: 90,
-        fontSize: 120,
-      },
+      liveDemoOptions: null,
+      options: null,
       hexagons: [
         { width: 300, height: 300, primaryColor: '#E27D60', secondaryColor: '#aaa', labelColor: '#000', label: '50%', value: 50, className: 'custom-class-1', thickness: 90, fontSize: 110 },
         { width: 200, height: 200, primaryColor: '#659DBD', secondaryColor: '#ccc', labelColor: '#000', label: '70%', value: 70, className: 'custom-class-2', thickness: 40, fontSize: 120 },
@@ -84,6 +79,17 @@ export default {
         { width: 300, height: 300, primaryColor: '#D83F87', secondaryColor: '#aaa', labelColor: '#000', label: '80%', value: 80, className: 'custom-class-6', thickness: 80, fontSize: 120 },
       ],
     };
+  },
+  mounted() {
+    this.options = JSON.parse(JSON.stringify(this.hexagons[3]));
+    this.options.className = 'interactive-demo';
+    this.liveDemoOptions = JSON.parse(JSON.stringify(this.hexagons[0]));
+    this.liveDemoOptions.className = 'live-demo';
+    setInterval(() => {
+      this.liveDemoOptions.value = this.liveDemoOptions.value >= 100 ? 0 : this.liveDemoOptions.value;
+      this.liveDemoOptions.value += 10;
+      this.liveDemoOptions.label = `${this.liveDemoOptions.value}%`;
+    }, 1000);
   },
 };
 </script>
