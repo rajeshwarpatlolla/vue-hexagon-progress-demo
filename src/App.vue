@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <div class="text-center">
-      <h1>VueHexagonProgress Demo</h1>
+      <h1>Vue Hexagon Progress Demo</h1>
       <div class="vue-hexagon-example" v-for="(hexagon, index) of hexagons" :key="index">
         <VueHexagonProgress :options="hexagon" />
       </div>
     </div>
     <hr />
-    <h1>Test Instantly</h1>
+    <h1 class="text-center">Test Instantly</h1>
     <div class="width_100p">
       <form class="form">
         <div>
