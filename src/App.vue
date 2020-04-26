@@ -1,18 +1,80 @@
 <template>
   <div id="app">
-    <h1>VueHexagon Demo</h1>
-    <div class="vue-hexagon-example" v-for="(hexagon, index) of hexagons" :key="index">
-      <VueHexagon :options="hexagon" />
+    <div class="text-center">
+      <h1>VueHexagon Demo</h1>
+      <div class="vue-hexagon-example" v-for="(hexagon, index) of hexagons" :key="index">
+        <VueHexagon :options="hexagon" />
+      </div>
+    </div>
+    <hr />
+    <h1>Test Instantly</h1>
+    <div class="width_100p">
+      <form class="form">
+        <div>
+          <label for="width">Width</label>
+          <input type="number" v-model="options.width" />
+        </div>
+        <div>
+          <label for="height">height</label>
+          <input type="number" v-model="options.height" />
+        </div>
+        <div>
+          <label for="primaryColor">primaryColor</label>
+          <input type="text" v-model="options.primaryColor" />
+        </div>
+        <div>
+          <label for="secondaryColor">secondaryColor</label>
+          <input type="text" v-model="options.secondaryColor" />
+        </div>
+        <div>
+          <label for="labelColor">labelColor</label>
+          <input type="text" v-model="options.labelColor" />
+        </div>
+        <div>
+          <label for="label">label</label>
+          <input type="text" v-model="options.label" />
+        </div>
+        <div>
+          <label for="value">value</label>
+          <input type="number" v-model="options.value" />
+        </div>
+        <div>
+          <label for="className">className</label>
+          <input type="text" v-model="options.className" />
+        </div>
+        <div>
+          <label for="thickness">thickness</label>
+          <input type="number" v-model="options.thickness" />
+        </div>
+        <div>
+          <label for="fontSize">fontSize</label>
+          <input type="number" v-model="options.fontSize" />
+        </div>
+      </form>
+      <div class="custom-demo">
+        <VueHexagon :options="options" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'App',
   data() {
     return {
+      options: {
+        width: 200,
+        height: 200,
+        primaryColor: '#45ad9a',
+        secondaryColor: '#aaa',
+        labelColor: '#000',
+        label: '50%',
+        value: 50,
+        className: 'vue-hexagon-custom-class',
+        thickness: 90,
+        fontSize: 120,
+      },
       hexagons: [
         { width: 300, height: 300, primaryColor: '#E27D60', secondaryColor: '#aaa', labelColor: '#000', label: '50%', value: 50, className: 'custom-class-1', thickness: 90, fontSize: 110 },
         { width: 200, height: 200, primaryColor: '#659DBD', secondaryColor: '#ccc', labelColor: '#000', label: '70%', value: 70, className: 'custom-class-2', thickness: 40, fontSize: 120 },
@@ -31,10 +93,44 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 .vue-hexagon-example {
   display: inline-block;
+}
+.form,
+.custom-demo {
+  display: inline-block;
+  width: 50%;
+}
+.width_100p {
+  width: 100%;
+  display: flex;
+}
+.text-center {
+  text-align: center;
+}
+.form {
+  text-align: right;
+  padding-right: 32px;
+}
+.custom-demo {
+  padding-top: 32px;
+  padding-left: 32px;
+  text-align: left;
+}
+form label {
+  text-align: right;
+  display: inline-block;
+  width: 50%;
+  padding-right: 32px;
+}
+form input {
+  width: 25%;
+  padding: 8px;
+  margin: 4px 0;
+  border: 1px solid #ccc;
+  border-radius: 2px;
 }
 </style>

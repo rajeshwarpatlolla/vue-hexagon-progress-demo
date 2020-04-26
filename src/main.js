@@ -1,6 +1,7 @@
 import Vue from 'vue';
-import App from './App.vue';
 import VueHexagon from 'vue-hexagon';
+
+import App from './App.vue';
 
 Vue.config.productionTip = false;
 Vue.use(VueHexagon);
