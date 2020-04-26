@@ -1,10 +1,10 @@
 import Vue from 'vue';
-import VueHexagon from 'vue-hexagon';
+import VueHexagonProgress from 'vue-hexagon-progress';
 
 import App from './App.vue';
 
 Vue.config.productionTip = false;
-Vue.use(VueHexagon);
+Vue.use(VueHexagonProgress);
 
 new Vue({
   render: (h) => h(App),

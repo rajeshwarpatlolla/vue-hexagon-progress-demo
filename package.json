@@ -1,5 +1,5 @@
 {
-  "name": "vue-hexagon-demo",
+  "name": "vue-hexagon-progress-demo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,9 +11,9 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
-    "vue-hexagon": "0.0.4"
+    "vue-hexagon-progress": "0.0.6"
   },
-  "homepage":"https://rajeshwarpatlolla.github.io/vue-hexagon-demo",
+  "homepage": "https://rajeshwarpatlolla.github.io/vue-hexagon-progress-demo",
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
     "@vue/cli-plugin-eslint": "~4.3.0",

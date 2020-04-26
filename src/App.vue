@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div class="text-center">
-      <h1>VueHexagon Demo</h1>
+      <h1>VueHexagonProgress Demo</h1>
       <div class="vue-hexagon-example" v-for="(hexagon, index) of hexagons" :key="index">
-        <VueHexagon :options="hexagon" />
+        <VueHexagonProgress :options="hexagon" />
       </div>
     </div>
     <hr />
@@ -52,7 +52,7 @@
         </div>
       </form>
       <div class="custom-demo">
-        <VueHexagon :options="options" />
+        <VueHexagonProgress :options="options" />
       </div>
     </div>
   </div>
